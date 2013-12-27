@@ -200,14 +200,14 @@ the specific language governing permissions and limitations under the Apache Lic
      * filters out mouse events that occur when mouse is stationary but
      * the elements under the pointer are scrolled.
      */
-    /*function installFilteredMouseMove(element) {
-        element.on("mousemove", function (e) {
+    function installFilteredMouseMove(element) {
+        /*element.on("mousemove", function (e) {
             var lastpos = lastMousePosition;
             if (lastpos === undefined || lastpos.x !== e.pageX || lastpos.y !== e.pageY) {
                 $(e.target).trigger("mousemove-filtered", e);
             }
-        });
-    }*/
+        });*/
+    }
 
     /**
      * Debounces a function. Returns a function that calls the original fn function only if no invocations have been made
