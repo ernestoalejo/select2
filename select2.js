@@ -201,12 +201,12 @@ the specific language governing permissions and limitations under the Apache Lic
      * the elements under the pointer are scrolled.
      */
     function installFilteredMouseMove(element) {
-        /*element.on("mousemove", function (e) {
+        element.on("mousemove", function (e) {
             var lastpos = lastMousePosition;
             if (lastpos === undefined || lastpos.x !== e.pageX || lastpos.y !== e.pageY) {
                 $(e.target).trigger("mousemove-filtered", e);
             }
-        });*/
+        });
     }
 
     /**
@@ -714,7 +714,7 @@ the specific language governing permissions and limitations under the Apache Lic
             this.container.on("click", killEvent);
 
             installFilteredMouseMove(this.results);
-            //this.dropdown.on("mousemove-filtered touchstart touchmove touchend", resultsSelector, this.bind(this.highlightUnderEvent));
+            this.dropdown.on("mousemove-filtered touchstart touchmove touchend", resultsSelector, this.bind(this.highlightUnderEvent));
 
             installDebouncedScroll(80, this.results);
             this.dropdown.on("scroll-debounced", resultsSelector, this.bind(this.loadMoreIfNeeded));
@@ -1489,14 +1489,14 @@ the specific language governing permissions and limitations under the Apache Lic
 
         // abstract
         highlightUnderEvent: function (event) {
-            /*var el = $(event.target).closest(".select2-result-selectable");
+            var el = $(event.target).closest(".select2-result-selectable");
             if (el.length > 0 && !el.is(".select2-highlighted")) {
                 var choices = this.findHighlightableChoices();
                 this.highlight(choices.index(el));
             } else if (el.length == 0) {
                 // if we are over an unselectable item remove all highlights
                 this.removeHighlight();
-            }*/
+            }
         },
 
         // abstract
